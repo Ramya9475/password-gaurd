@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Password Guard – Strength Checker & Generator",
+  "version": "1.0.0",
+  "description": "Checks password strength on every login/sign-up page, blocks words from your local wordlist, and generates strong passwords. 100% offline.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "action": {
+    "default_title": "Password Guard",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "options_page": "options.html",
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["wordlist.js", "engine.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

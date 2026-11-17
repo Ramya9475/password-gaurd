@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Password Guard</title>
+<style>
+ body{margin:0;width:340px;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:#0d1117;color:#f0f0f0}
+ .wrap{padding:16px}
+ h1{font-size:18px;margin:0 0 2px;background:linear-gradient(90deg,#7f5af0,#2cb67d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+ p.s{margin:0 0 12px;color:#a0a0b0;font-size:12px}
+ input[type=password],input[type=text]{width:100%;box-sizing:border-box;background:#161b22;color:#fff;border:1px solid #30363d;border-radius:10px;padding:10px;font-size:14px}
+ label{font-size:12px;color:#a0a0b0;display:flex;gap:6px;align-items:center;margin:8px 0}
+ .bar{height:10px;background:#21262d;border-radius:6px;overflow:hidden;margin-top:12px}
+ .bar>div{height:100%;width:0;transition:width .3s,background .3s}
+ .verdict{margin-top:8px;font-weight:800;font-size:15px;text-align:center}
+ .crit{font-size:12.5px;padding:2px 0}.ok{color:#2cb67d}.no{color:#ff5470}
+ .card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:8px 12px;margin-top:10px}
+ .tip{border-left:4px solid #ff9f1c;background:#1a1f2b;border-radius:6px;padding:8px 12px;margin-top:10px;font-size:12px;color:#f0e6d2}
+ .tip ul{margin:4px 0 0;padding-left:16px}
+ a{color:#7f5af0;font-size:12px;cursor:pointer;display:block;text-align:center;margin-top:12px}
+</style></head>
+<body><div class="wrap">
+ <h1>🔐 Password Guard</h1>
+ <p class="s">Test a password here. It also appears automatically on every login page.</p>
+ <input id="pw" type="password" placeholder="Type a password…" autocomplete="off">
+ <label><input type="checkbox" id="show"> Show password</label>
+ <div class="bar"><div id="fill"></div></div>
+ <div class="verdict" id="verdict">—</div>
+ <div class="card" id="criteria"></div>
+ <div class="tip" id="tip" hidden></div>
+ <a id="opts">⚙ Manage local wordlist (<span id="count">0</span> words)</a>
+</div>
+<script src="wordlist.js"></script><script src="engine.js"></script><script src="popup.js"></script>
+</body></html>
